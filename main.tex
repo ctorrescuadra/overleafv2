@@ -14,6 +14,7 @@
 %% The lineno packages adds line numbers. Start line numbering with
 \usepackage{lineno}
 \usepackage{cleveref}
+\usepackage{subcaption}
 \usepackage{usercommands}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{3pt plus1pt minus1pt}
@@ -99,6 +100,26 @@ where $F_u$ is the exergy provided by its fuel streams and $P_u$ is the exergy o
 \label{eq:fpi}
 F_u - P_u = I_u \ge 0
 \end{equation}
+
+\begin{figure}[htpb]
+	\begin{subfigure}{0.46\textwidth}
+		\includegraphics{ps1}
+		\caption{Physical diagram} \label{fig2a}
+	\end{subfigure} \hfill
+	\begin{subfigure}{0.46\textwidth}
+		\includegraphics{ps2}
+		\caption{Productive diagram} \label{fig2b}
+	\end{subfigure}
+	\caption{Physical and productive diagrams of a generic component}
+	\label{fig2}
+\end{figure}
+
+Consider a generic component, as it is shown in \cref{fig2}, whose unit exergy consumption is defined as:
+\begin{equation}
+k=\frac{E_1 + (E_2 - E_3)}{E_6 + (E_5-E_4)}
+\end{equation}
+The objective of the process is to produce the flow $E_6$ and to increase the exergy of flow \#4 to $E_5$. For this purpose, two fuel streams are defined: the flow $E_1$ and the exergy transferred by the difference ${E_2-E_3}$. Flows 1, 2 and 3 are associated with the fuel streams meanwhile flows 4,5,6 to the product streams.
+
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
