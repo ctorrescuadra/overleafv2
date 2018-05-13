@@ -570,7 +570,7 @@ The methodology provides a simple algorithm to compute adjacency matrix of the p
  \entry{$\bm{\omega}_s$}{Vector of exergy of final products $(m\times 1)$}
  \entry{$\bm{\omega}_r$}{Vector of exergy of system wastes $(m\times 1)$}
 \end{nlist}
-\begin{nlist}[2.5em]{Subscripts, superscripts and accents}
+\begin{nlist}[2em]{Subscripts, superscripts and accents}
  \entry{t}{Traspose matrix or vector}
  \entry{$\hat{\phantom{x}}$}{Diagonal matrix}
  \entry{*}{Related to direct exergy costs}
@@ -578,8 +578,8 @@ The methodology provides a simple algorithm to compute adjacency matrix of the p
 \end{nlist}	
 \apendix
 \section{M-Matrices}
-Very often problems in the biological, physical and social sciences can be reduced to problems involving matrices which, due to certain constraints, have some special structure. One of the most common situation is where a square matrix has non-positive off-diagonal and positive diagonal entries \cite{Plemmons74}. Such matrices appears, for example, in input-output production models in economics.
-
+Very often problems in the biological, physical and social sciences can be reduced to problems involving matrices which, due to certain constraints, have some special structure. One of the most common situation is where a square matrix has non-positive off-diagonal and positive diagonal entries \cite{Berman1979NonnegativeSciences}. Such matrices appears, for example, in input-output production models in economics.
+\cite{Gale1986TheModels}
 A square matrix \vm{A} is said to be \emph{diagonal dominant} if for every row of the matrix, the magnitude of the diagonal entry in a row is larger or equal than the sum of the off-diagonal entries
 \[ \left|a_{ii}\right| \geq \sum_{i \neq j} {\left|a_{ij}\right|}
 \qquad 1 \leq i \leq n \]
@@ -605,7 +605,10 @@ Consider the matrix $\vm{A}=\mdiag{U}-\vm{B}$, and $\vm{B}>0$. The matrix \vm{A}
 \end{compactenum}	
 M-matrices has also important properties in relation with numerical analysis. In particular, the LU factors of an M-matrix are guaranteed to exist and can be stably computed
 without need for numerical pivoting.
-	
+
+\setlength{\bibsep}{1pt plus 0.3ex}
+\bibliography{mendeley}
+\bibliographystyle{circe}
 \begin{thebibliography}{11}
 \addcontentsline{toc}{section}{References}
 \setlength{\itemsep}{0pt}

@@ -35,7 +35,7 @@
 \RequirePackage[neverdecrease]{paralist}
 \RequirePackage[justification=raggedright,singlelinecheck=false,labelsep=period,labelfont=sl,textfont=sl]{caption}
 \RequirePackage{txfonts}
-\RequirePackage{mathtools,amssymb,amsfonts,array,appendix,bm,booktabs,cleveref,courier,eurosym,fancyhdr,float,graphicx,ifthen,multirow,tabularx,tabulary,paralist,url,verbatim,subcaption,setspace,textcomp,titlesec,etoolbox,xcolor}
+\RequirePackage{mathtools,amssymb,amsfonts,array,appendix,bm,booktabs,cleveref,courier,eurosym,fancyhdr,float,graphicx,ifthen,multirow,tabularx,tabulary,paralist,url,verbatim,subcaption,setspace,textcomp,titlesec,etoolbox,xcolor,natbib}
 \RequirePackage{usercommands}
 %Parameters and lenghts
 \pdfcompresslevel=9
