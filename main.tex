@@ -578,8 +578,8 @@ The methodology provides a simple algorithm to compute adjacency matrix of the p
 \end{nlist}	
 \apendix
 \section{M-Matrices}
-Very often problems in the biological, physical and social sciences can be reduced to problems involving matrices which, due to certain constraints, have some special structure. One of the most common situation is where a square matrix has non-positive off-diagonal and positive diagonal entries \cite{Berman1979NonnegativeSciences}. Such matrices appears, for example, in input-output production models in economics.
-\cite{Gale1986TheModels}
+Very often problems in the biological, physical and social sciences can be reduced to problems involving matrices which, due to certain constraints, have some special structure. One of the most common situation is where a square matrix has non-positive off-diagonal and positive diagonal entries \cite{Berman1979NonnegativeSciences}. Such matrices appears, for example, in input-output production models in economics
+\cite{Gale1986TheModels}.
 A square matrix \vm{A} is said to be \emph{diagonal dominant} if for every row of the matrix, the magnitude of the diagonal entry in a row is larger or equal than the sum of the off-diagonal entries
 \[ \left|a_{ii}\right| \geq \sum_{i \neq j} {\left|a_{ij}\right|}
 \qquad 1 \leq i \leq n \]
@@ -588,7 +588,7 @@ so that: $\sum_{j}{\left| a_{i_0 j} \right|} > 0$
 
 A matrix \vm{A} is said positive if all its elements $a_{ij}\ge0$, and at least one element is bigger than zero.
 
-A positive matrix \vm{B} is called \emph{productive} \cite{Gale89} if there is a vector $\vm{x}_0$ so that
+A positive matrix \vm{B} is called \emph{productive} \cite{Gale1986TheModels} if there is a vector $\vm{x}_0$ so that
 $\vm{B}\,\vm{x}_0 < \vm{x}_0$
 
 Let $\lambda _{1},\dotsc ,\lambda _{n}$ be the (real or complex) eigenvalues of a matrix \vm{B}. Then its spectral radius $\rho(\vm{B})$ is defined as:
@@ -606,6 +606,7 @@ Consider the matrix $\vm{A}=\mdiag{U}-\vm{B}$, and $\vm{B}>0$. The matrix \vm{A}
 M-matrices has also important properties in relation with numerical analysis. In particular, the LU factors of an M-matrix are guaranteed to exist and can be stably computed
 without need for numerical pivoting.
 
+\setcitestyle{brackets}
 \setlength{\bibsep}{1pt plus 0.3ex}
 \bibliography{mendeley}
 \bibliographystyle{circe}
