@@ -32,11 +32,11 @@
 	hyperfootnotes=false, 
 	pdfstartview={FitH},
 	pdfpagemode= UseNone]{hyperref}
-\RequirePackage[brackets, sort, numbers]{natbib}
+\RequirePackage[sort, numbers]{natbib}
 \RequirePackage[neverdecrease]{paralist}
 \RequirePackage[justification=raggedright,singlelinecheck=false,labelsep=period,labelfont=sl,textfont=sl]{caption}
 \RequirePackage{txfonts}
-\RequirePackage{mathtools,amssymb,amsfonts,array,appendix,bm,booktabs,cleveref,courier,eurosym,fancyhdr,float,graphicx,ifthen,multirow,tabularx,tabulary,paralist,url,verbatim,subcaption,setspace,textcomp,titlesec,etoolbox,xcolor}
+\RequirePackage{mathtools,amssymb,amsfonts,array,appendix,bm,booktabs,cleveref,courier,eurosym,fancyhdr,float,graphicx,ifthen,multirow,tabularx,tabulary,paralist,url,verbatim,subcaption,setspace,textcomp,titlesec,etoolbox,nomencl,xcolor}
 \RequirePackage{usercommands}
 %Parameters and lenghts
 \pdfcompresslevel=9
@@ -58,7 +58,8 @@
 \renewcommand\appendixname{Appendix}
 \renewcommand\refname{References}
 \definecolor{bluecite}{HTML}{0f00ff}
-%Sections definitions
+
+%%%%Sections definitions
 \setcounter{secnumdepth}{2}
 \titleformat{\section}{\normalfont\large\sffamily\bfseries}{\thesection.}{0.5em}{}
 \titleformat{\subsection}{\normalfont\normalsize\sffamily\bfseries}{\thesubsection.}{0.5em}{}
@@ -69,7 +70,7 @@
 \titlespacing*{\subsubsection} {0pt}{0.1ex plus 0.1ex minus .1ex}{0.1ex plus .1ex}
 \titlespacing*{\paragraph}{0pt}{0.5ex plus 0.5ex minus .2ex}{1em}
 
-%First page header/footer definition
+%%%% First page header/footer definition
 \fancypagestyle{firstpage}{%
  \renewcommand\headrule{}
  \fancyhf{}
@@ -77,10 +78,9 @@
  \rfoot{\sffamily\footnotesize Date:\space\@pubdate}
 }
 \pagestyle{plain} %Default header/footer	
-\setcitestyle{brackets,}
+
 %
-%Title Page
-%
+%%%% Title Page
 \def\@address{}
 \newcommand{\address}[1]{\gdef\@address{#1}}
 \def\@subject{}
@@ -93,7 +93,7 @@
 \newcommand{\version}[1]{\gdef\@version{#1}}
 \def\@pubdate{}
 \renewcommand{\date}[1][\today]{\gdef\@pubdate{#1}}
-% Construir el titulo
+%%%
 \renewcommand\maketitle{\par   
 	\newpage
 	\global\@topnum\z@   % Prevents figures from going at top of page.
@@ -137,9 +137,11 @@
 		pdfauthor={\@author}
 	}%
 }
-%
-% Appendix
-%%%%% Defines the appendix
+
+%%% Nomenclature package
+\makenomenclature
+
+%%%%% Appendix
 \newcommand{\apendix}{%
 	\setcounter{section}{0}%
 	\gdef\thesection{\@Alph\c@section}%	
@@ -149,15 +151,9 @@
 	\gdef\theHsection{\@Alph\c@section.}% for hyperref
 }
 
-% Define Nomenclature
-\newcommand{\nomenclature}{%
-	\section*{Nomenclature}
-	\addcontentsline{toc}{section}{Nomenclature}	
-}
+%%%% Lista para nomenclatura (no se usa)
 \newenvironment{nlist}[2][3em]{%
 	\parskip 0pt
-	{\normalfont\small\sffamily\bfseries #2}
-	\newcommand\entry[2]{\item[##1] ##2}
 	\begin{list}{}
 		{\renewcommand*{\makelabel}[1]{\hspace{\labelsep}\raggedleft ##1}
 			\setlength{\labelwidth}{#1}
@@ -167,7 +163,7 @@
 			\sloppy}}
 	{\end{list}}
 
-% Lista de items comprimida
+%%%% Lista de items comprimida
 \newenvironment{elist}%
 { \begin{list}%
     {\tiny \raisebox{0.5ex}{$\blacksquare$}}%
@@ -182,11 +178,12 @@
     \setlength{\parsep}{1pt}
     }}%
 { \end{list} }
-%Caption Setup
+
+%%%% Caption Setup
 \captionsetup[subfigure]{justification=centering}
 \captionsetup[subtable]{justification=centering}
 
-% Column types
+%%%% Column types
 \newcolumntype{W}{@{}>{\raggedright\arraybackslash}X@{}}
 \newcolumntype{Y}{@{}>{\raggedleft\arraybackslash}X@{}}
 \newcolumntype{Z}{@{}>{\centering\arraybackslash}X@{}}
@@ -197,15 +194,6 @@
 \newcolumntype{D}[1]{>{\raggedleft\arraybackslash}p{#1}}
 \newcolumntype{T}{>{\centering\arraybackslash$}m{0.9cm}<{$}}
 
-%%%%% Defines the appendix
-\newcommand{\apendice}{%
-	\setcounter{section}{0}%
-	\gdef\thesection{\@Alph\c@section}%	
-	\titleformat {\section} [block] {\raggedright\large\sffamily\bfseries}
-	             {\appendixname~\thesection.~} {0pt} {}
-	\titlespacing {\section} {0pt} {12pt} {6pt}
-	\gdef\theHsection{\@Alph\c@section.}% for hyperref
-}
 %%%% Code Execution
 \AfterEndPreamble{%
 %	\maketitle
@@ -221,5 +209,6 @@
 	\setlength\belowdisplayshortskip{2pt}
 	\setlength{\mathindent}{0.5cm}
 	\setlength{\emergencystretch}{12pt}
+	\setlength{\nomitemsep}{-\parsep}
 }
 \endinput
